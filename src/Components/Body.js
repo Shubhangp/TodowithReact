@@ -49,7 +49,7 @@ const Body = () => {
     };
     // Adding the new task into the Redux store
     dispatch(addTask(newTask));
-    alert("Task Add successfully, to see added task scroll down");
+    alert("Task Add successfully, if there is more task please scroll down");
     setNewTasks("");
   };
 

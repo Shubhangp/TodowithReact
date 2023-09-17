@@ -72,6 +72,9 @@ input[type=text]:focus-visible {
   border: 1px solid #314d63;
   border-radius: 0 0.25rem 0.25rem 0;
 }
+.primary-button:disabled {
+  opacity: 0.5;
+}
 .secondary-button {
   background-color: #f18977;
   color: #fff;

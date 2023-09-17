@@ -28,7 +28,7 @@ const TodoList = (props) => {
                 value={editedTaskTitle}
                 onChange={(e) => setEditedTaskTitle(e.target.value)}
               />
-              <button className="primary-button" onClick={handleSaveEdit}>
+              <button className="primary-button" disabled={!editedTaskTitle} onClick={handleSaveEdit}>
                 Save
               </button>
               <button
@@ -46,8 +46,9 @@ const TodoList = (props) => {
                 placeholder="Enter task title"
                 value={newTasks}
                 onChange={(e) => setNewTasks(e.target.value)}
+                required
               />
-              <button className="primary-button" onClick={handleAddTask}>
+              <button className="primary-button" disabled={!newTasks} onClick={handleAddTask}>
                 Add
               </button>
             </>
