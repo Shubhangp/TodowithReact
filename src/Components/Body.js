@@ -17,16 +17,15 @@ const Body = () => {
   const [editedTaskTitle, setEditedTaskTitle] = useState("");
   const tasks = useSelector((state) => state.tasks);
   const dispatch = useDispatch();
-  const savedTasks = JSON.parse(localStorage.getItem("tasks"));
 
   useEffect(() => {
     // Fetching the task from api
-    if(savedTasks.length === 0){
+    if(tasks.length === 0){
       const fetchTasksData = async () => {
         try {
-          const tasks = await fetchTasksFromAPI();
+          const fetchtasks = await fetchTasksFromAPI();
           // Adding api task into the Redux store
-          dispatch(fetchTasks(tasks));
+          dispatch(fetchTasks(fetchtasks));
         } catch (error) {
           console.error("Error fetching tasks:", error);
         }
@@ -35,7 +34,7 @@ const Body = () => {
       fetchTasksData();
     }
     loadTasksFromLocalStorage(dispatch);
-  }, [dispatch, savedTasks]);
+  }, [dispatch, tasks]);
 
   const handleAddTask = () => {
     // Create new id for upcoming task
