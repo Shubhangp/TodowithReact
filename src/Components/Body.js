@@ -35,7 +35,7 @@ const Body = () => {
       fetchTasksData();
     }
     loadTasksFromLocalStorage(dispatch);
-  }, [dispatch]);
+  }, [dispatch, savedTasks]);
 
   const handleAddTask = () => {
     // Create new id for upcoming task
